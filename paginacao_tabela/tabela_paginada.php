@@ -1,5 +1,5 @@
 <?php
-        $iLinha = 60;//rand(10, 30);
+        $iLinha = 62;//rand(10, 30);
         $iColuna = 5;//rand(10, 30);
         for ($i = 0; $i < $iLinha; $i++) {
             for($j = 0; $j <= $iColuna; $j++) {

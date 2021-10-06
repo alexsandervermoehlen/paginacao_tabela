@@ -18,13 +18,17 @@
 <?php
 $linhas = isset($_POST['linhas']) ? $_POST['linhas'] : -1;
 $colunas = isset($_POST['colunas']) ? $_POST['colunas'] : -1;
-if($linhas > 0 && $colunas > 0)
-    echo "Criando uma tabela de " . $linhas . " linhas por " . $colunas . " colunas";
 
-echo "<table border='1' cellpading='10' cellspacing='10' style='border:1px solid #000; width:" . ($colunas * 100) . "px;height:" . ($linhas * 50). "px;'>";
-$l = 0;
+        //$iLinha = 60;//rand(10, 30);
+        //$iColuna = 5;//rand(10, 30);
+        for ($i = 0; $i < $linhas; $i++) {
+            for($j = 0; $j <= $colunas; $j++) {
+                $aArray[$i][$j] = rand(0, 100);
+            }
+        }
 
-echo '<table border="1">';
+
+        echo '<table border="1">';
             $valor = $_GET['pagina']*10;
             $fim = ($valor==10)?$fim=9:$fim=$valor-1;
             //if ($valor==10) {
@@ -40,7 +44,7 @@ echo '<table border="1">';
             for ($i = $inicio; $i <= $fim; $i++) {
             echo '<tr>';
                 echo "<td>{$i}</td>";
-                for($j = 0; $j <= $iColuna; $j++) {
+                for($j = 0; $j <= $colunas; $j++) {
                     echo '<td>';
                     echo $aArray[$i][$j]. ' ';
                     echo '</td>';
@@ -51,7 +55,7 @@ echo '<table border="1">';
         echo '</table>';
 
         //links
-        for ($i = 1; $i <= ($iLinha/10); $i++) {
+        for ($i = 1; $i <= ($linhas/10); $i++) {
             echo "<a href=\"?pagina={$i}\">{$i}</a> ";
         }
 ?>

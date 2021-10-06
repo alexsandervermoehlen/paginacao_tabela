@@ -31,7 +31,7 @@ while($l < $linhas)
     while ($c < $colunas)
     {
         $c++;
-        echo "<td style='border:1px dashed #black>L" . $l . "C" . $c . "</td>";     
+        echo "<td style='border:1px dashed #black;'>L" . $l . "C" . $c . "</td>";     
     }
     echo "</tr>";   
 }
